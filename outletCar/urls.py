@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from appOutletCar.views import index
 
 urlpatterns = [
  path('appOutletCar/', include('appOutletCar.urls')),
  path('admin/', admin.site.urls),
+ path('', index, name= 'index')
 ]
