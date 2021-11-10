@@ -3,4 +3,8 @@ from django.http import HttpResponse
 from .models import Coche
 
 def index(request):
-    return render(request, 'index.html')
+    coches = Coche.objects.all()
+    contexto = {
+        'coches':coches
+    }
+    return render(request, 'index.html', contexto)

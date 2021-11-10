@@ -10,6 +10,42 @@
 
 <body>
     <h1>Esto marcha chavalees</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Marca
+                </th>
+                <th>
+                    Modelo
+                </th>
+                <th>
+                    Kilometros
+                </th>
+                <th>
+                    Categoria
+                </th>
+                <th>
+                    Color
+                </th>
+                <th>
+                    Precio
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for coche in coches%}
+            <tr>
+                <td>{{ coche.marca }}</td>
+                <td>{{ coche.modelo }}</td>
+                <td>{{ coche.kilometros }}</td>
+                <td>{{ coche.categoria }}</td>
+                <td>{{ coche.color }}</td>
+                <td>{{ coche.percio }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 
 </html>

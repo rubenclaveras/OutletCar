@@ -9,3 +9,7 @@ class Coche(models.Model):
     categoria= models.CharField (max_length= 300)
     color= models.CharField(max_length= 20)
     precio= models.IntegerField()
+
+    def __str__(self):
+        completo = self.marca + " " + self.modelo
+        return completo
