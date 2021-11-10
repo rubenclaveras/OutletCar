@@ -52,9 +52,18 @@
     {% endif %} {% endfor %} {% endfor %}
 
     <h2>Deportivo</h2>
-    {% for categoriaCoche in categoriasCoche%} {% if categoriaCoche.categoria.nombre == "Deportivo" %}
+    {% for categoriaCoche in categoriasCoche%} {% if categoriaCoche.categoria.nombreCategoria == "Deportivo" %}
     <p>{{ categoriaCoche.coche }}</p>
     {% endif %} {% endfor %}
+
+    <div class="anuncio">
+        {% for coche in coches%}
+        <img src="{{ coche.foto.url }}" alt="foto">
+        <h2>
+            {{ coche.marca }} {{ coche.modelo }} <span>{{ coche.precio }}€</span>
+        </h2>
+        {% endfor %}
+    </div>
 </body>
 
 </html>

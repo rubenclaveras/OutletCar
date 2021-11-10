@@ -1,16 +1,24 @@
 from django.db import models
+from django.db.models.deletion import CASCADE
 from django.db.models.fields.reverse_related import ManyToOneRel
+
+class Marca(models.Model):
+    id= models.AutoField(primary_key= True)
+    nombreMarca= models.CharField(max_length= 20)
+
+    def __str__(self):
+        return self.nombreMarca
 
 class Categoria(models.Model):
     id= models.AutoField(primary_key= True)
-    nombre= models.CharField(max_length= 20)
+    nombreCategoria= models.CharField(max_length= 20)
 
     def __str__(self):
-        return self.nombre
+        return self.nombreCategoria
 
 class Coche(models.Model):
     id= models.AutoField(primary_key= True)
-    marca= models.CharField(max_length= 15)
+    marca= models.ForeignKey(Marca, on_delete= models.CASCADE)
     modelo= models.CharField(max_length= 35)
     kilometros= models.IntegerField()
     anyo= models.IntegerField ()
@@ -20,7 +28,7 @@ class Coche(models.Model):
     foto= models.ImageField(null=True)
 
     def __str__(self):
-        completo = self.marca + " " + self.modelo
+        completo = self.marca.nombreMarca + " " + self.modelo
         return completo
 
 class CategoriaCoche(models.Model):
@@ -28,5 +36,5 @@ class CategoriaCoche(models.Model):
     coche = models.ForeignKey(Coche, on_delete= models.CASCADE)
 
     def __str__(self):
-        completo = self.categoria.nombre + " " + self.coche.marca + " " + self.coche.modelo
+        completo = self.categoria.nombreCategoria + " " + self.coche.marca.nombreMarca + " " + self.coche.modelo
         return completo
