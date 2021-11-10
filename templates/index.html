@@ -39,17 +39,17 @@
                 <td>{{ coche.marca }}</td>
                 <td>{{ coche.modelo }}</td>
                 <td>{{ coche.kilometros }}</td>
-                <td></td>
+                <td><img src="{{ coche.foto.url }}" alt="foto"> </td>
                 <td>{{ coche.color }}</td>
                 <td>{{ coche.precio }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    {% for coche in coches%} {% for categoria in categorias%}
-    <p>{{ categoria }}</p>
-    {% endfor %} {% endfor %}
-
+    <h2>CATEGORIAS</h2>
+    {% for coche in coches%}
+    <p>{{ coche.categorias }}</p>
+    {% endfor %}
 </body>
 
 </html>

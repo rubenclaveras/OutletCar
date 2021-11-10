@@ -17,6 +17,7 @@ class Coche(models.Model):
     color= models.CharField(max_length= 20)
     precio= models.IntegerField()
     categorias= models.ManyToManyField(Categoria)
+    foto= models.ImageField()
 
     def __str__(self):
         completo = self.marca + " " + self.modelo
