@@ -39,13 +39,17 @@
                 <td>{{ coche.marca }}</td>
                 <td>{{ coche.modelo }}</td>
                 <td>{{ coche.kilometros }}</td>
-                <td>{{ coche.categoria }}</td>
+                <td></td>
                 <td>{{ coche.color }}</td>
                 <td>{{ coche.precio }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+    {% for coche in coches%} {% for categoria in categorias%}
+    <p>{{ categoria }}</p>
+    {% endfor %} {% endfor %}
+
 </body>
 
 </html>
