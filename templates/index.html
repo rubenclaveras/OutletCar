@@ -46,10 +46,15 @@
             {% endfor %}
         </tbody>
     </table>
-    <h2>CATEGORIAS</h2>
-    {% for coche in coches%}
-    <p>{{ coche.categorias }}</p>
-    {% endfor %}
+    <h2>Categorias</h2>
+    {% for categoria in categorias%}{% for categoriaCoche in categoriasCoche%} {% if categoria == categoriaCoche.categoria %}
+    <p>{{ categoriaCoche.coche }}</p>
+    {% endif %} {% endfor %} {% endfor %}
+
+    <h2>Deportivo</h2>
+    {% for categoriaCoche in categoriasCoche%} {% if categoriaCoche.categoria.nombre == "Deportivo" %}
+    <p>{{ categoriaCoche.coche }}</p>
+    {% endif %} {% endfor %}
 </body>
 
 </html>

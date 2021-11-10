@@ -16,9 +16,17 @@ class Coche(models.Model):
     anyo= models.IntegerField ()
     color= models.CharField(max_length= 20)
     precio= models.IntegerField()
-    categorias= models.ManyToManyField(Categoria)
-    foto= models.ImageField()
+    categorias= models.ManyToManyField(Categoria, through='CategoriaCoche')
+    foto= models.ImageField(null=True)
 
     def __str__(self):
         completo = self.marca + " " + self.modelo
+        return completo
+
+class CategoriaCoche(models.Model):
+    categoria = models.ForeignKey(Categoria, on_delete= models.CASCADE)
+    coche = models.ForeignKey(Coche, on_delete= models.CASCADE)
+
+    def __str__(self):
+        completo = self.categoria.nombre + " " + self.coche.marca + " " + self.coche.modelo
         return completo
