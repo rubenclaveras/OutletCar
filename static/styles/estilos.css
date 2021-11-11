@@ -1,0 +1,17 @@
+h1 {
+    color: red;
+}
+
+.marca {
+    width: fit-content;
+    background-color: blue;
+}
+
+.marcas {
+    display: flex;
+    background-color: brown;
+}
+
+h2 {
+    background-color: chartreuse;
+}

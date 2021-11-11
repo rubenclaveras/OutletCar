@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,11 +6,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href='{% static "styles/estilos.css"%}'>
     <title>Pagina inicial</title>
 </head>
 
 <body>
     <h1>Esto marcha chavalees</h1>
+    <div class="marcas">{% for marca in marcas%}
+        <h2 class="marca">{{ marca.nombreMarca }}</h2>{% endfor %}</div>
     <table>
         <thead>
             <tr>
@@ -39,7 +43,7 @@
                 <td>{{ coche.marca }}</td>
                 <td>{{ coche.modelo }}</td>
                 <td>{{ coche.kilometros }}</td>
-                <td><img src="{{ coche.foto.url }}" alt="foto"> </td>
+                <td><img src="{{ coche.foto.url }}" alt="foto {{ coche.marca }}"> </td>
                 <td>{{ coche.color }}</td>
                 <td>{{ coche.precio }}</td>
             </tr>
