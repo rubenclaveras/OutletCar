@@ -4,7 +4,16 @@ h1 {
 
 .marca {
     width: fit-content;
-    background-color: blue;
+    margin-right: 10px;
+    background-color: white;
+}
+
+.s1 {
+    margin-top: 30px;
+}
+
+.logo {
+    height: 45px;
 }
 
 .marcas {

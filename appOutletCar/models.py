@@ -5,6 +5,7 @@ from django.db.models.fields.reverse_related import ManyToOneRel
 class Marca(models.Model):
     id= models.AutoField(primary_key= True)
     nombreMarca= models.CharField(max_length= 20)
+    logo= models.ImageField(upload_to="static/fotos/logosMarcas", null=True)
 
     def __str__(self):
         return self.nombreMarca
@@ -25,7 +26,7 @@ class Coche(models.Model):
     color= models.CharField(max_length= 20)
     precio= models.IntegerField()
     categorias= models.ManyToManyField(Categoria, through='CategoriaCoche')
-    foto= models.ImageField(null=True)
+    foto= models.ImageField(upload_to="static/fotos/fotosCoches", null=True)
 
     def __str__(self):
         completo = self.marca.nombreMarca + " " + self.modelo
