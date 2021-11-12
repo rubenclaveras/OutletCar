@@ -14,3 +14,6 @@ def index(request):
         'marcas': marcas,
     }
     return render(request, 'index.html', contexto)
+
+def cochesMarca(request):
+    return render (request, 'cochesMarca.html')
