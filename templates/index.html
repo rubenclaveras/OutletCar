@@ -6,14 +6,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href='{% static "styles/estilos.css" %}'>
+    <link type='text/css' rel='stylesheet' href='{% static "styles/estilos.css" %}'>
     <title>Pagina inicial</title>
 </head>
 
 <body>
-    <h1>Esto marcha chavalees</h1>
-    <div class="marcas"><span class="s1">Marca: </span> {% for marca in marcas%}
-        <h2 class="marca"><img class="logo" src="{{ marca.logo.url }}" alt="{{ marca.nombreMarca }}" title="{{ marca.nombreMarca }}"></h2>{% endfor %}</div>
+    <header>
+        <h1>Outlet Car</h1>
+    </header>
+    <div class="marcas"><span class="s1">Marcas: </span> {% for marca in marcas%}
+        <h3 class="marca">
+            <a href="/cochesMarca"><img class="logo" src="{{ marca.logo.url }}" alt="{{ marca.nombreMarca }}" title="{{ marca.nombreMarca }}"></a>
+        </h3>{% endfor %}</div>
+    <div class="categorias"><span class="s2">Categorias: </span> {% for categoria in categorias%}
+        <h3 class="categoria">
+            <a href="/cochesMarca">{{ categoria.nombreCategoria }}</a>
+        </h3>{% endfor %}</div>
+
+    <div class="slider">
+        <ul>
+
+            <li>
+                {% for coche in coches%} {% if coche.id == 1 %}
+                <div class="anuncio"><img class="imagenGrande" src="{{ coche.foto.url }}" alt="foto {{ coche.marca }}">
+                    <h2 class="textoAnuncio">
+                        {{ coche.marca }} {{ coche.modelo }} {{ coche.precio }}€
+                    </h2>
+                </div>
+                {% endif %} {% endfor %}
+            </li>
+            <li>
+                {% for coche in coches%} {% if coche.id == 2 %}
+                <div class="anuncio"><img class="imagenGrande" src="{{ coche.foto.url }}" alt="foto {{ coche.marca }}">
+                    <h2 class="textoAnuncio">
+                        {{ coche.marca }} {{ coche.modelo }} {{ coche.precio }}€
+                    </h2>
+                </div>
+                {% endif %} {% endfor %}
+            </li>
+            <li>
+                {% for coche in coches%} {% if coche.id == 3 %}
+                <div class="anuncio"><img class="imagenGrande" src="{{ coche.foto.url }}" alt="foto {{ coche.marca }}">
+                    <h2 class="textoAnuncio">
+                        {{ coche.marca }} {{ coche.modelo }} {{ coche.precio }}€
+                    </h2>
+                </div>
+                {% endif %} {% endfor %}
+            </li>
+            <li>
+                {% for coche in coches%} {% if coche.id == 4 %}
+                <div class="anuncio"><img class="imagenGrande" src="{{ coche.foto.url }}" alt="foto {{ coche.marca }}">
+                    <h2 class="textoAnuncio">
+                        {{ coche.marca }} {{ coche.modelo }} {{ coche.precio }}€
+                    </h2>
+                </div>
+                {% endif %} {% endfor %}
+            </li>
+
+        </ul>
+    </div>
+
+
+
+
     <table>
         <thead>
             <tr>
@@ -40,7 +95,7 @@
         <tbody>
             {% for coche in coches%}
             <tr>
-                <td>{{ coche.marca }}</td>
+                <td>{{ coche.id }}</td>
                 <td>{{ coche.modelo }}</td>
                 <td>{{ coche.kilometros }}</td>
                 <td><img src="{{ coche.foto.url }}" alt="foto {{ coche.marca }}"> </td>

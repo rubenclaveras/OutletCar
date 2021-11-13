@@ -1,27 +1,61 @@
+* {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 h1 {
     color: blue;
+}
+
+h3 {
+    font-size: 15px;
+}
+
+.marcas {
+    display: flex;
+}
+
+.s1 {
+    margin-top: 28px;
+    font-size: large;
 }
 
 .marca {
     width: fit-content;
     margin-right: 10px;
-    background-color: green;
+    margin-left: 10px;
     border-radius: 180px;
 }
 
-.s1 {
-    margin-top: 30px;
-}
-
 .logo {
-    height: 45px;
+    height: 50px;
 }
 
-.marcas {
+.categorias {
     display: flex;
-    background-color: brown;
 }
 
-h2 {
-    background-color: chartreuse;
+.categoria {
+    width: fit-content;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: gray;
+    border-radius: 180px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.s2 {
+    margin-top: 20px;
+    font-size: large;
+}
+
+.textoAnuncio {
+    width: 50%;
+    text-align: center;
+    background-color: gray;
+}
+
+.imagenGrande {
+    width: 50%;
+    height: auto;
 }
