@@ -17,3 +17,6 @@ def index(request):
 
 def cochesMarca(request):
     return render (request, 'cochesMarca.html')
+
+def dacia(request):
+    return render (request, 'Dacia.html')

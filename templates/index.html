@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type='text/css' rel='stylesheet' href='{% static "styles/estilos.css" %}'>
-    <title>Pagina inicial</title>
+    <title>Outlet Car</title>
 </head>
 
 <body>
@@ -17,8 +17,9 @@
     <main>
         <div class="marcas"><span class="s1">Marcas: </span> {% for marca in marcas%}
             <h3 class="marca">
-                <a href="/cochesMarca"><img class="logo" src="{{ marca.logo.url }}" alt="{{ marca.nombreMarca }}" title="{{ marca.nombreMarca }}"></a>
+                <a href="{{ marca.nombreMarca }}.html"><img class="logo" src="{{ marca.logo.url }}" alt="{{ marca.nombreMarca }}" title="{{ marca.nombreMarca }}"></a>
             </h3>{% endfor %}</div>
+
         <div class="categorias"><span class="s2">Categorias: </span> {% for categoria in categorias%}
             <h3 class="categoria">
                 <a href="/cochesMarca">{{ categoria.nombreCategoria }}</a>
@@ -116,14 +117,12 @@
         <p>{{ categoriaCoche.coche }}</p>
         {% endif %} {% endfor %}
 
-        <div class="anuncio">
-            {% for coche in coches%}
-            <img src="{{ coche.foto.url }}" alt="foto">
-            <h2>
-                {{ coche.marca }} {{ coche.modelo }} <span>{{ coche.precio }}€</span>
-            </h2>
-            {% endfor %}
-        </div>
+        <div>
+            <h3>Uno de cada categoria</h3>
+            {% for marca in marcas%} {% for coche in coches%} {% if coche.marca.id == marca.id %}
+            <p>{{ coche.marca.nombreMarca }} {{ coche.modelo }}</p>
+            {% endif %} {% endfor %} {% endfor %}</div>
+
     </main>
 </body>
 
