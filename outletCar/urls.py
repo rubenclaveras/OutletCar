@@ -15,16 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from appOutletCar.views import index, cochesMarca, dacia
+from appOutletCar.views import index
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
  path('appOutletCar/', include('appOutletCar.urls')),
  path('admin/', admin.site.urls),
- path('', index, name= 'index'),
- path('cochesMarca/', cochesMarca, name='cochesMarca'),
- path('Dacia.html', dacia, name='dacia')
+ path('', include('appOutletCar.urls'))
 ]
 
 if settings.DEBUG:

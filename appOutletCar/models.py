@@ -6,6 +6,10 @@ class Marca(models.Model):
     id= models.AutoField(primary_key= True)
     nombreMarca= models.CharField(max_length= 20)
     logo= models.ImageField(upload_to="static/fotos/logosMarcas", null=True)
+    slug = models.SlugField(unique=True, default=nombreMarca)
+
+    def nombreSlug (self):
+        return self.nombreMarca
 
     def __str__(self):
         return self.nombreMarca
@@ -13,6 +17,10 @@ class Marca(models.Model):
 class Categoria(models.Model):
     id= models.AutoField(primary_key= True)
     nombreCategoria= models.CharField(max_length= 20)
+    slug = models.SlugField(unique=True, default=nombreCategoria)
+
+    def nombreSlug (self):
+        return self.nombreCategoria
 
     def __str__(self):
         return self.nombreCategoria
@@ -27,6 +35,10 @@ class Coche(models.Model):
     precio= models.IntegerField()
     categorias= models.ManyToManyField(Categoria, through='CategoriaCoche')
     foto= models.ImageField(upload_to="static/fotos/fotosCoches", null=True)
+    slug = models.SlugField(unique=True, default= modelo)
+
+    def nombreSlug (self):
+        return self.modelo
 
     def __str__(self):
         completo = self.marca.nombreMarca + " " + self.modelo
