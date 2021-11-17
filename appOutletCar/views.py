@@ -8,6 +8,9 @@ def index(request):
     categorias = Categoria.objects.all()
     categoriasCoche = CategoriaCoche.objects.all()
     marcas = Marca.objects.all()
+    for marca in marcas:
+        marca.coches = Coche.objects.filter(
+        marca= marca.pk).all()[:1]
     contexto = {
         'coches':coches,
         'categorias': categorias,
@@ -30,15 +33,15 @@ class MarcaVista(View):
             'marcas': marcas,
             'marca': marca,
         }
-        return render (request, 'marca.html', contexto)
+        return render (request, 'marcas.html', contexto)
 
 class CategoriaVista(View):
-    def get(request, slug_categoria):
+    def get(self, request, slug_categoria):
+        categoria= get_object_or_404(Categoria, slug=slug_categoria)
         coches = Coche.objects.all()
         categorias = Categoria.objects.all()
         categoriasCoche = CategoriaCoche.objects.all()
         marcas = Marca.objects.all()
-        categoria= get_object_or_404(Categoria, slug=slug_categoria)
         contexto = {
             'coches':coches,
             'categorias': categorias,
@@ -46,4 +49,20 @@ class CategoriaVista(View):
             'marcas': marcas,
             'categoria': categoria,
         }
-        return render (request, 'categoria.html', contexto)
+        return render (request, 'categorias.html', contexto)
+
+class AnuncioVista(View):
+    def get(self, request, slug_coche):
+        coche= get_object_or_404(Coche, slug=slug_coche)
+        coches = Coche.objects.all()
+        categorias = Categoria.objects.all()
+        categoriasCoche = CategoriaCoche.objects.all()
+        marcas = Marca.objects.all()
+        contexto = {
+            'coches':coches,
+            'categorias': categorias,
+            'categoriasCoche': categoriasCoche,
+            'marcas': marcas,
+            'coche': coche,
+        }
+        return render (request, 'anuncios.html', contexto)
