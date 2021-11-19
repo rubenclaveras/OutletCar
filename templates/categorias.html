@@ -1,3 +1,4 @@
+{% extends "index.html" %} {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,13 +6,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link type='text/css' rel='stylesheet' href='{% static "styles/estilos.css" %}'> {% block title %} Categorias {% endblock %}
 </head>
 
 <body>
-    Categorias > {{ categoria.nombreCategoria }} {% for coche in coches%} {% if coche.categoria.id == categoria.id %}
-    <h1>{{ coche.categorias.nombreCategoria }}</h1>
-    {%endif%}{%endfor%}
-</body>
+    {% block content %}
+    <h1 class="cabecera">Categorias > {{ categoria.nombreCategoria }}</h1>
+    <div class="inicialCategoria">
+        <div class="categoriaMarcaAnuncio">
+            <ul>
+
+                {% for elemento in categoriasCoche %} {% if elemento.categoria.id == categoria.id %}
+                <li>
+                    <a href="/anuncios/{{elemento.coche.slug}}">
+                        <div class="anuncioMedianoCategoria"><img class="imagenMediana" src="{{ elemento.coche.foto.url }}" alt="foto {{ elemento.coche.marca }}">
+                            <h2 class="textoAnuncio">
+                                {{ elemento.coche.marca }} {{ elemento.coche.modelo }} {{ elemento.coche.precio }}€
+                            </h2>
+                        </div>
+                    </a>
+                </li>
+                {%endif%}{%endfor%}
+
+            </ul>
+        </div>
+    </div>
+    {% endblock %}
 
 </html>

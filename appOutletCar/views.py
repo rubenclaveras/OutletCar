@@ -9,7 +9,7 @@ def index(request):
     categoriasCoche = CategoriaCoche.objects.all()
     marcas = Marca.objects.all()
     for marca in marcas:
-        marca.coches = Coche.objects.filter(
+        marca.coches = Coche.objects.order_by('precio').filter(
         marca= marca.pk).all()[:1]
     contexto = {
         'coches':coches,
