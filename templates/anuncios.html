@@ -28,7 +28,7 @@
 
     </div>
     <div class="recomendados">
-        {% for elemento in categoriasCoche %} {% if elemento.categoria.id == categoria.id %}
+        {% for elemento in categoriasCoche %} {% if elemento.categoria.id == coches.categorias.id %}
         <li>
             <a href="/anuncios/{{elemento.coche.slug}}">
                 <div class="anuncioMedianoCategoria"><img class="imagenMediana" src="{{ elemento.coche.foto.url }}" alt="foto {{ elemento.coche.marca }}">

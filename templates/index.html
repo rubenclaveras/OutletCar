@@ -87,12 +87,14 @@
             </div>
             <div class="lateral">
                 {% for coche in coches%} {% if coche.id == 5 %}
+                <a href="/anuncios/{{coche.slug}}"></a>
                 <div class="anuncioMediano"><img class="imagenMediana" src="{{ coche.foto.url }}" alt="foto {{ coche.marca }}">
                     <h2 class="textoAnuncio">
                         {{ coche.marca }} {{ coche.modelo }} {{ coche.precio }}€
                     </h2>
                 </div>
                 {% endif %} {% endfor %} {% for coche in coches%} {% if coche.id == 6 %}
+                <a href="/anuncios/{{coche.slug}}"></a>
                 <div class="anuncioMediano"><img class="imagenMediana" src="{{ coche.foto.url }}" alt="foto {{ coche.marca }}">
                     <h2 class="textoAnuncio">
                         {{ coche.marca }} {{ coche.modelo }} {{ coche.precio }}€
