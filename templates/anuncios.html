@@ -15,18 +15,39 @@
     <div class="fotoAnuncio">
         <img class="imagenGrande" src="{{ coche.foto.url }}" alt="foto {{ coche.marca }}" title="{{ coche.marca.nombreMarca }}">
     </div>
-    <div class="infoAnuncio">
-        <h3>Marca: {{ coche.marca.nombreMarca }}<img class="logo" src="{{ coche.marca.logo.url }}" alt="{{ coche.marca.nombreMarca }}" title="{{ coche.marca.nombreMarca }}"></a>
-        </h3>
-        <h3>Modelo: {{ coche.modelo }}</h3>
-        <h3>Kilometros: {{ coche.kilometros }}</h3>
-        <h3>Anyo: {{ coche.Anyo }}</h3>
-        <h3>Color: {{ coche.color }}</h3>
-        <h3>Precio: {{ coche.precio }}</h3>
-        <h3>Categorias: {% for elemento in categoriasCoche %} {%if coche.id == elemento.coche.id %} {{ elemento.categoria.nombreCategoria}} {%endif%}{% endfor %}
-        </h3>
-
-    </div>
+    <table>
+        <tr>
+            <td><img class="logo" src="{{ coche.marca.logo.url }}" alt="{{ coche.marca.nombreMarca }}" title="{{ coche.marca.nombreMarca }}"></td>
+        </tr>
+        <tr>
+            <td><b>Marca</b></td>
+            <td>{{ coche.marca.nombreMarca }}</td>
+        </tr>
+        <tr>
+            <td><b>Modelo</b></td>
+            <td>{{ coche.modelo }}</td>
+        </tr>
+        <tr>
+            <td><b>Kilómetros</b></td>
+            <td>{{ coche.kilometros }} km</td>
+        </tr>
+        <tr>
+            <td><b>Año</b></td>
+            <td> {{ coche.Anyo }}</td>
+        </tr>
+        <tr>
+            <td><b>Color</b></td>
+            <td>{{ coche.color }}</td>
+        </tr>
+        <tr>
+            <td><b>Precio</b></td>
+            <td>{{ coche.precio }} €</td>
+        </tr>
+        <tr>
+            <td><b>Categorias</b></td>
+            <td>{% for elemento in categoriasCoche %} {%if coche.id == elemento.coche.id %} {{ elemento.categoria.nombreCategoria}} {%endif%}{% endfor %}</td>
+        </tr>
+    </table>
     <div class="recomendados">
         {% for elemento in categoriasCoche %} {% if elemento.categoria.id == coches.categorias.id %}
         <li>
