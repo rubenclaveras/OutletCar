@@ -374,3 +374,32 @@ footer p {
     height: 20px;
     text-align: center;
 }
+
+.anuncioConjunto {
+    display: flex;
+    margin-bottom: 5%;
+}
+
+.fotoAnuncio {
+    width: 55%;
+}
+
+.infoAnuncio {
+    font-size: 155%;
+    width: 40%;
+    margin-left: 5%;
+}
+
+table {
+    width: 100%;
+}
+
+th,
+td {
+    width: 50%;
+    text-align: center;
+    border: 2px solid #000;
+    border-collapse: collapse;
+    padding: 0.35em;
+    caption-side: bottom;
+}

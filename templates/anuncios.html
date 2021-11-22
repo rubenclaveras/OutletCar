@@ -12,42 +12,47 @@
 <body>
     {% block content %}
     <h1 class="cabecera">Anuncios > {{ coche.modelo }}</h1>
-    <div class="fotoAnuncio">
-        <img class="imagenGrande" src="{{ coche.foto.url }}" alt="foto {{ coche.marca }}" title="{{ coche.marca.nombreMarca }}">
+    <div class="anuncioConjunto">
+        <div class="fotoAnuncio">
+            <img class="imagenGrande" src="{{ coche.foto.url }}" alt="foto {{ coche.marca }}" title="{{ coche.marca.nombreMarca }}">
+        </div>
+        <div class="infoAnuncio">
+            <table>
+                <tr>
+                    <td><img class="logo" src="{{ coche.marca.logo.url }}" alt="{{ coche.marca.nombreMarca }}" title="{{ coche.marca.nombreMarca }}"></td>
+                </tr>
+                <tr>
+                    <td><b>Marca</b></td>
+                    <td>{{ coche.marca.nombreMarca }}</td>
+                </tr>
+                <tr>
+                    <td><b>Modelo</b></td>
+                    <td>{{ coche.modelo }}</td>
+                </tr>
+                <tr>
+                    <td><b>Kilómetros</b></td>
+                    <td>{{ coche.kilometros }} km</td>
+                </tr>
+                <tr>
+                    <td><b>Año</b></td>
+                    <td> {{ coche.anyo }}</td>
+                </tr>
+                <tr>
+                    <td><b>Color</b></td>
+                    <td>{{ coche.color }}</td>
+                </tr>
+                <tr>
+                    <td><b>Precio</b></td>
+                    <td>{{ coche.precio }} €</td>
+                </tr>
+                <tr>
+                    <td><b>Categorias</b></td>
+                    <td>{% for elemento in categoriasCoche %} {%if coche.id == elemento.coche.id %} {{ elemento.categoria.nombreCategoria}} {%endif%}{% endfor %}</td>
+                </tr>
+            </table>
+        </div>
     </div>
-    <table>
-        <tr>
-            <td><img class="logo" src="{{ coche.marca.logo.url }}" alt="{{ coche.marca.nombreMarca }}" title="{{ coche.marca.nombreMarca }}"></td>
-        </tr>
-        <tr>
-            <td><b>Marca</b></td>
-            <td>{{ coche.marca.nombreMarca }}</td>
-        </tr>
-        <tr>
-            <td><b>Modelo</b></td>
-            <td>{{ coche.modelo }}</td>
-        </tr>
-        <tr>
-            <td><b>Kilómetros</b></td>
-            <td>{{ coche.kilometros }} km</td>
-        </tr>
-        <tr>
-            <td><b>Año</b></td>
-            <td> {{ coche.Anyo }}</td>
-        </tr>
-        <tr>
-            <td><b>Color</b></td>
-            <td>{{ coche.color }}</td>
-        </tr>
-        <tr>
-            <td><b>Precio</b></td>
-            <td>{{ coche.precio }} €</td>
-        </tr>
-        <tr>
-            <td><b>Categorias</b></td>
-            <td>{% for elemento in categoriasCoche %} {%if coche.id == elemento.coche.id %} {{ elemento.categoria.nombreCategoria}} {%endif%}{% endfor %}</td>
-        </tr>
-    </table>
+
     <div class="recomendados">
         {% for elemento in categoriasCoche %} {% if elemento.categoria.id == coches.categorias.id %}
         <li>
