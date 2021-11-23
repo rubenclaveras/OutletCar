@@ -11,7 +11,7 @@
 
 <body>
     {% block content %}
-    <h1 class="cabecera">Anuncios > {{ coche.modelo }}</h1>
+    <h1 class="cabecera">ANUNCIOS - {{coche.marca}} {{ coche.modelo }}</h1>
     <div class="anuncioConjunto">
         <div class="fotoAnuncio">
             <img class="imagenGrande" src="{{ coche.foto.url }}" alt="foto {{ coche.marca }}" title="{{ coche.marca.nombreMarca }}">
@@ -19,7 +19,7 @@
         <div class="infoAnuncio">
             <table>
                 <tr>
-                    <td><img class="logo" src="{{ coche.marca.logo.url }}" alt="{{ coche.marca.nombreMarca }}" title="{{ coche.marca.nombreMarca }}"></td>
+                    <td colspan="2"><img class="logo" src="{{ coche.marca.logo.url }}" alt="{{ coche.marca.nombreMarca }}" title="{{ coche.marca.nombreMarca }}"></td>
                 </tr>
                 <tr>
                     <td><b>Marca</b></td>

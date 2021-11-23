@@ -133,6 +133,7 @@ a {
 .cabecera {
     font-size: 60px;
     color: black;
+    margin-left: 37px;
 }
 
 .anuncioGrande {
@@ -382,6 +383,7 @@ footer p {
 
 .fotoAnuncio {
     width: 55%;
+    border: 2px solid black;
 }
 
 .infoAnuncio {
