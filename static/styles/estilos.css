@@ -7,7 +7,6 @@
 
 header {
     margin-top: 0;
-    margin-bottom: 20px;
     text-align: center;
     height: 350px;
     background: url(../fotos/banner/banner2.jpg) 30% 0;
@@ -60,18 +59,47 @@ a {
     height: 50px;
 }
 
+.tablaCategorias {
+    width: 100%;
+}
+
 .categorias {
     display: flex;
     color: black;
+    margin-bottom: 20px;
+}
+
+.tablaCategorias td {
+    width: max-content;
+    border-color: rgb(196, 174, 137);
+    background-color: rgb(216, 195, 160);
+    text-align: center;
+    padding: auto;
+    border-collapse: collapse;
+}
+
+.tablaCategorias td:hover {
+    filter: opacity(0.9);
+    cursor: pointer;
+    background-color: rgb(243, 213, 162);
 }
 
 .categoria {
-    width: fit-content;
-    margin-right: 10px;
-    margin-left: 10px;
-    background-color: rgb(168, 167, 167);
-    border-radius: 180px;
-    padding: 10px;
+    font-size: 140%;
+}
+
+.tablaMarcas {
+    width: 50%;
+    text-align: center;
+    margin-left: 13%;
+    margin-bottom: 50px;
+}
+
+.tablaMarcas td {
+    text-align: center;
+    padding: auto;
+    text-align: center;
+    border: none;
 }
 
 .s2 {
@@ -82,7 +110,7 @@ a {
 .inicial {
     display: flex;
     width: 100%;
-    margin-top: 60px;
+    margin-top: 50px;
     margin-bottom: 120px;
 }
 
@@ -236,7 +264,6 @@ a {
 
 .categoria:hover {
     cursor: pointer;
-    filter: opacity(0.7);
 }
 
 a:hover {
