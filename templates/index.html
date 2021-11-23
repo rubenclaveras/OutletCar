@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" href="/static/fotos/iconos/coche.png">
     <link type='text/css' rel='stylesheet' href='{% static "styles/estilos.css" %}'>
 
-    <title> {% block title%} Outlet Car {%endblock %}</title>
+    <title>Outlet Car {% block title%} {%endblock %}</title>
 </head>
 
 <body>
@@ -23,6 +23,7 @@
             <h1>Outlet Car</h1>
         </a>
     </header>
+    {% block content%}
     <div class="categorias">
 
         <table class="tablaCategorias">
@@ -52,7 +53,6 @@
 
     <main>
 
-        {% block content%}
 
         <div class="inicial">
             <div class="slider">

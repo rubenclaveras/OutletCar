@@ -6,11 +6,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type='text/css' rel='stylesheet' href='{% static "styles/estilos.css" %}'> {% block title %} Categorias {% endblock %}
+    <link type='text/css' rel='stylesheet' href='{% static "styles/estilos.css" %}'> {% block title %} - Categorias {% endblock %}
 </head>
+{% block content %}
+<div class="categorias">
+
+    <table class="tablaCategorias">
+
+        <tr>
+            {% for elemento in categorias%}{% if elemento.id == categoria.id %}
+            <td class="categoriaSeleccionado">
+                <h3 class="categoria">
+                    <a href="/categorias/{{elemento.slug}}">{{ elemento.nombreCategoria }}</a>
+                </h3>
+            </td>
+            {% else%}
+            <td>
+                <h3 class="categoria">
+                    <a href="/categorias/{{elemento.slug}}">{{ elemento.nombreCategoria }}</a>
+                </h3>
+            </td>{% endif %}{% endfor %}
+        </tr>
+
+    </table>
+</div>
+<div class="barraMarcas">
+    <div class="columnaIzq"></div>
+    <div class="marcas">{% for marca in marcas%}
+        <h3 class="marca">
+            <a href="/marcas/{{marca.slug}}"><img class="logo" src="{{ marca.logo.url }}" alt="{{ marca.nombreMarca }}" title="{{ marca.nombreMarca }}"></a>
+        </h3>
+        {% endfor %}
+    </div>
+    <div class="columaDer"></div>
+</div>
 
 <body>
-    {% block content %}
+
     <h1 class="cabecera">Categorias - {{ categoria.nombreCategoria }}</h1>
     <div class="inicialCategoria">
         <div class="categoriaMarcaAnuncio">

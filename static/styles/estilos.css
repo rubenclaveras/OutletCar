@@ -84,6 +84,11 @@ a {
     background-color: rgb(243, 213, 162);
 }
 
+.tablaCategorias td.categoriaSeleccionado {
+    filter: opacity(0.9);
+    background-color: rgb(243, 213, 162)
+}
+
 .categoria {
     font-size: 140%;
 }
@@ -166,9 +171,15 @@ a {
 }
 
 .cabecera {
-    font-size: 60px;
+    font-size: 50px;
+    width: 100%;
     color: black;
-    margin-left: 37px;
+    background-color: rgb(189, 189, 189);
+    text-align: center;
+    padding-bottom: 16px;
+    border-radius: 190px;
+    margin-top: 40px;
+    margin-bottom: 30px;
 }
 
 .anuncioGrande {

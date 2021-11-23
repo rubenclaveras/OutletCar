@@ -6,12 +6,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type='text/css' rel='stylesheet' href='{% static "styles/estilos.css" %}'> {% block title %} Anuncios {% endblock %}
+    <link type='text/css' rel='stylesheet' href='{% static "styles/estilos.css" %}'> {% block title %} - Anuncios {% endblock %}
 </head>
+{% block content %}
+<div class="categorias">
+
+    <table class="tablaCategorias">
+
+        <tr>
+            {% for categoria in categorias%}
+            <td>
+                <h3 class="categoria">
+                    <a href="/categorias/{{categoria.slug}}">{{ categoria.nombreCategoria }}</a>
+                </h3>
+            </td>
+            {% endfor %}
+        </tr>
+
+    </table>
+</div>
+<div class="barraMarcas">
+    <div class="columnaIzq"></div>
+    <div class="marcas">{% for marca in marcas%}
+        <h3 class="marca">
+            <a href="/marcas/{{marca.slug}}"><img class="logo" src="{{ marca.logo.url }}" alt="{{ marca.nombreMarca }}" title="{{ marca.nombreMarca }}"></a>
+        </h3>
+        {% endfor %}
+    </div>
+    <div class="columaDer"></div>
+</div>
 
 <body>
-    {% block content %}
-    <h1 class="cabecera">ANUNCIOS - {{coche.marca}} {{ coche.modelo }}</h1>
+
+    <h1 class="cabecera">Anuncios - {{coche.marca}} {{ coche.modelo }}</h1>
     <div class="anuncioConjunto">
         <div class="fotoAnuncio">
             <img class="imagenGrande" src="{{ coche.foto.url }}" alt="foto {{coche.marca}} {{ coche.modelo }}" title="{{coche.marca}} {{ coche.modelo }}">
@@ -52,19 +79,25 @@
             </table>
         </div>
     </div>
+    <h1 class="cabecera">También te puede interesar</h1>
+    <div class="inicialCategoria">
+        <div class="categoriaMarcaAnuncio">
+            <ul>
 
-    <div class="recomendados">
-        {% for elemento in categoriasCoche %} {% if elemento.categoria.id == coches.categorias.id %}
-        <li>
-            <a href="/anuncios/{{elemento.coche.slug}}">
-                <div class="anuncioMedianoCategoria"><img class="imagenMediana" src="{{ elemento.coche.foto.url }}" alt="foto {{ elemento.coche.marca }}">
-                    <h2 class="textoAnuncio">
-                        {{ elemento.coche.marca }} {{ elemento.coche.modelo }} {{ elemento.coche.precio }}€
-                    </h2>
-                </div>
-            </a>
-        </li>
-        {%endif%}{%endfor%}
+                {% for elemento in categoriasCoche %} {% if elemento.coche.id == coche.id %}{%for otroElemento in categoriasCoche %}{% if elemento.categoria.id == otroElemento.categoria.id %}
+                <li>
+                    <a href="/anuncios/{{otroElemento.coche.slug}}">
+                        <div class="anuncioMedianoCategoria"><img class="imagenMediana" src="{{ otroElemento.coche.foto.url }}" alt="foto {{ otroElemento.coche.marca }}">
+                            <h2 class="textoAnuncio">
+                                {{ otroElemento.coche.marca }} {{ otroElemento.coche.modelo }} {{ otroElemento.coche.precio }}€
+                            </h2>
+                        </div>
+                    </a>
+                </li>
+                {%endif%}{%endfor%}{%endif%}{%endfor%}
+
+            </ul>
+        </div>
     </div>
 
     {% endblock %}
