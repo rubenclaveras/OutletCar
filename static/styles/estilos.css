@@ -172,9 +172,11 @@ a {
 
 .cabecera {
     font-size: 50px;
+    font-style: italic;
+    text-decoration: underline;
     width: 100%;
     color: black;
-    background-color: rgb(189, 189, 189);
+    background-color: rgb(196, 174, 137);
     text-align: center;
     padding-bottom: 16px;
     border-radius: 190px;
