@@ -41,6 +41,7 @@ a {
 
 .marcas {
     display: flex;
+    width: 60%;
 }
 
 .s1 {
@@ -50,9 +51,8 @@ a {
 
 .marca {
     width: fit-content;
-    margin-right: 15px;
-    margin-left: 15px;
-    border-radius: 180px;
+    margin-right: 2%;
+    margin-left: 2%;
 }
 
 .logo {
@@ -95,11 +95,18 @@ a {
     margin-bottom: 50px;
 }
 
-.tablaMarcas td {
-    text-align: center;
-    padding: auto;
-    text-align: center;
-    border: none;
+.barraMarcas {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.columnaIzq {
+    width: 15%;
+}
+
+.columnaDer {
+    width: 20%;
 }
 
 .s2 {

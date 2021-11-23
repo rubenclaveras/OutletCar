@@ -39,21 +39,17 @@
 
         </table>
     </div>
-    <div class="marcas">
-        <table class="tablaMarcas">
-
-            <tr>
-                {% for marca in marcas%}
-                <td>
-                    <h3 class="marca">
-                        <a href="/marcas/{{marca.slug}}"><img class="logo" src="{{ marca.logo.url }}" alt="{{ marca.nombreMarca }}" title="{{ marca.nombreMarca }}"></a>
-                    </h3>
-                </td>
-                {% endfor %}
-            </tr>
-
-        </table>
+    <div class="barraMarcas">
+        <div class="columnaIzq"></div>
+        <div class="marcas">{% for marca in marcas%}
+            <h3 class="marca">
+                <a href="/marcas/{{marca.slug}}"><img class="logo" src="{{ marca.logo.url }}" alt="{{ marca.nombreMarca }}" title="{{ marca.nombreMarca }}"></a>
+            </h3>
+            {% endfor %}
+        </div>
+        <div class="columaDer"></div>
     </div>
+
     <main>
 
         {% block content%}
