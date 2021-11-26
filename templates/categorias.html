@@ -16,8 +16,8 @@
         <tr>
             {% for elemento in categorias%}{% if elemento.id == categoria.id %}
             <td class="categoriaSeleccionado">
-                <h3 class="categoria">
-                    <a href="/categorias/{{elemento.slug}}">{{ elemento.nombreCategoria }}</a>
+                <h3 class="categoriaSel">
+                    {{ elemento.nombreCategoria }}
                 </h3>
             </td>
             {% else%}

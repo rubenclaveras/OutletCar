@@ -84,12 +84,20 @@ a {
     background-color: rgb(243, 213, 162);
 }
 
+.categoriaSel:hover {
+    cursor: auto;
+}
+
 .tablaCategorias td.categoriaSeleccionado {
     filter: opacity(0.9);
     background-color: rgb(243, 213, 162)
 }
 
 .categoria {
+    font-size: 140%;
+}
+
+.categoriaSel {
     font-size: 140%;
 }
 
@@ -177,8 +185,9 @@ a {
     font-family: Arial Black;
     font-weight: bold;
     color: #fff;
-    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-    background: url(../fotos/banner/banner3.jpeg) 30% 0;
+    text-shadow: -3px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    background: url(../fotos/banner/banner32.jpeg) 30% 0;
+    filter: opacity(0.9);
     text-align: center;
     padding-bottom: 25px;
     padding-top: 25px;
