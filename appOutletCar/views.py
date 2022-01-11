@@ -66,3 +66,11 @@ class AnuncioVista(View):
             'coche': coche,
         }
         return render (request, 'anuncios.html', contexto)
+
+def busquedaCoches(request):
+    return render(request, "busquedaCoches.html")
+
+def buscar(request):
+    mensaje="Coche buscado: %r" %request.GET["coche"]
+
+    return HttpResponse(mensaje)
