@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="/static/fotos/iconos/coche.png">
-    <link type='text/css' rel='stylesheet' href='{% static "styles/estilos.css" %}'>
+    <link type='text/css' rel='stylesheet' href='{% static "styles/estilos.css" %}' class="theme">
 
     <title>Outlet Car {% block title%} {%endblock %}</title>
 </head>
@@ -39,6 +39,8 @@
         <span class="es">Español</span>
         <input type="checkbox" class="check">
         <span class="en">Ingles</span>
+        <input type="checkbox" class="checkMode">
+        <span class="da">Nocturno</span>
         <script src="../static/js/app.js"></script>
     </header>
 

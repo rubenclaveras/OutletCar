@@ -6,9 +6,14 @@ window.addEventListener('load', () => {
 $(document).ready(function() {
     //Modificar el CSS de la class cabecera metiendo un borde negro
     $(".cabecera").css("border", "3px solid black");
-
 })
-
+$(".checkMode").click(function() {
+    if ($("input.checkMode").is(":checked")) {
+        $(".theme").attr("href", "styles/dark.css");
+    } else {
+        $(".theme").attr("href", "styles/estilos.css");
+    }
+})
 var check = document.querySelector(".check");
 check.addEventListener('click', idioma);
 
