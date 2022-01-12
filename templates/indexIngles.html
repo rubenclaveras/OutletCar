@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
@@ -21,7 +22,7 @@
 
     <header>
         <a href="/">
-            <h1>Outlet Car</h1>
+            <h1 data-aos="fade-right" data-aos-duration="40000">Outlet Car</h1>
         </a>
         <span class="es">Spanish</span>
         <input type="checkbox" class="check" checked>
@@ -35,13 +36,52 @@
         <table class="tablaCategorias">
 
             <tr>
-                {% for categoria in categorias%}
+
                 <td>
                     <h3 class="categoria">
-                        <a href="/categorias/{{categoria.slug}}">{{ categoria.nombreCategoria }}</a>
+                        <a href="/categorias/coupe">Coupe</a>
                     </h3>
                 </td>
-                {% endfor %}
+                <td>
+                    <h3 class="categoria">
+                        <a href="/categorias/pickup">PickUp</a>
+                    </h3>
+                </td>
+                <td>
+                    <h3 class="categoria">
+                        <a href="/categorias/suv">SUV</a>
+                    </h3>
+                </td>
+                <td>
+                    <h3 class="categoria">
+                        <a href="/categorias/sedan">Sedan</a>
+                    </h3>
+                </td>
+                <td>
+                    <h3 class="categoria">
+                        <a href="/categorias/descapotable">Convertible</a>
+                    </h3>
+                </td>
+                <td>
+                    <h3 class="categoria">
+                        <a href="/categorias/Furgoneta">Van</a>
+                    </h3>
+                </td>
+                <td>
+                    <h3 class="categoria">
+                        <a href="/categorias/deportivo">Sportive</a>
+                    </h3>
+                </td>
+                <td>
+                    <h3 class="categoria">
+                        <a href="/categorias/familiar">Familiar</a>
+                    </h3>
+                </td>
+                <td>
+                    <h3 class="categoria">
+                        <a href="/categorias/urbano">Urban</a>
+                    </h3>
+                </td>
             </tr>
 
         </table>
@@ -132,7 +172,7 @@
             </div>
         </div>
 
-        <h1 class="cabecera">Mejores precios</h1>
+        <h1 class="cabecera" data-aos="fade-right" data-aos-duration="40000">Mejores precios</h1>
         <div class="inicialCategoria">
             <div class="categoriaMarcaAnuncio">
                 <ul>
@@ -238,13 +278,15 @@
             </div>
 
         </footer>
-        <!--
-        <div>
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        </div>
-        -->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
 
 </body>
 

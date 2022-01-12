@@ -19,6 +19,22 @@ def index(request):
     }
     return render(request, 'index.html', contexto)
 
+def indexIngles(request):
+    coches = Coche.objects.all()
+    categorias = Categoria.objects.all()
+    categoriasCoche = CategoriaCoche.objects.all()
+    marcas = Marca.objects.all()
+    for marca in marcas:
+        marca.coches = Coche.objects.order_by('precio').filter(
+        marca= marca.pk).all()[:1]
+    contexto = {
+        'coches':coches,
+        'categorias': categorias,
+        'categoriasCoche': categoriasCoche,
+        'marcas': marcas,
+    }
+    return render(request, 'indexIngles.html', contexto)
+
 class MarcaVista(View):
     def get(self, request, slug_marca):
         coches = Coche.objects.all()
