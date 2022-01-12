@@ -1,0 +1,23 @@
+<html>
+
+<body>
+    <p>Estas buscando: <strong>{{query}}</strong></p>
+
+    {% if listaCoches %}
+    <p>Coches encontrados: {{listaCoches|length}} coches</p>
+
+    <ul>
+        {% for coches in listaCoches %}
+        <li>
+            <a href="/anuncios/{{coches.slug}}">
+                {{coches.marca}}{{coches.modelo}}
+            </a> {% endfor %}
+        </li>
+    </ul>
+    {% else %}
+    <p>No se ha encontrado ningun coche</p>
+    {% endif %}
+
+</body>
+
+</html>

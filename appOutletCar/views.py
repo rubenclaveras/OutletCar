@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.http import HttpResponse
 from django.views import View
 from .models import CategoriaCoche, Coche, Marca, Categoria
@@ -87,6 +87,15 @@ def busquedaCoches(request):
     return render(request, "busquedaCoches.html")
 
 def buscar(request):
-    mensaje="Coche buscado: %r" %request.GET["coche"]
+    if request.GET["modelo"]:
+        #mensaje="Coche buscado: %r" %request.GET["marca"]
 
+        modelo1=request.GET["modelo"]
+        
+        listaCoches=Coche.objects.filter(modelo= modelo1) 
+
+        return render(request, "resultadosBusqueda.html", {"Coches1":listaCoches, "query": modelo1})
+
+    else:
+        mensaje= "No has introducido nada"
     return HttpResponse(mensaje)
