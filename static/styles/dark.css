@@ -22,7 +22,7 @@ body {
 }
 
 h1 {
-    color: white;
+    color: black;
     font-size: 100px;
 }
 
@@ -460,10 +460,11 @@ th,
 td {
     width: 50%;
     text-align: center;
-    border: 2px solid #000;
+    border: 2px solid white;
     border-collapse: collapse;
     padding: 0.35em;
     caption-side: bottom;
+    color: white;
 }
 
 .es {

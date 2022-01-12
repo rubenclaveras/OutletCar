@@ -44,7 +44,7 @@
             <img class="imagenGrande" src="{{ coche.foto.url }}" alt="foto {{coche.marca}} {{ coche.modelo }}" title="{{coche.marca}} {{ coche.modelo }}">
         </div>
         <div class="infoAnuncio">
-            <table>
+            <table class="tabla">
                 <tr>
                     <td colspan="2"><img class="logo" src="{{ coche.marca.logo.url }}" alt="{{ coche.marca.nombreMarca }}" title="{{ coche.marca.nombreMarca }}"></td>
                 </tr>
@@ -73,7 +73,7 @@
                     <td>{{ coche.precio }} €</td>
                 </tr>
                 <tr>
-                    <td><b>Categorias</b></td>
+                    <td><b>Categorías</b></td>
                     <td>{% for elemento in categoriasCoche %} {%if coche.id == elemento.coche.id %} {{ elemento.categoria.nombreCategoria}} {%endif%}{% endfor %}</td>
                 </tr>
             </table>
