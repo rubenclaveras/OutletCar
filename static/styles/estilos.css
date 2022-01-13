@@ -574,3 +574,17 @@ td {
         height: 20px;
     }
 }
+
+.formulario {
+    margin: 0 auto;
+    margin-top: 3%;
+    position: relative;
+    background-color: white;
+    border-radius: 6px;
+    border-left: none;
+    width: 30%;
+    padding: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 10px 10px 10px;
+}

@@ -92,7 +92,7 @@ def buscar(request):
 
         modelo1=request.GET["modelo"]
         
-        listaCoches=Coche.objects.filter(modelo= modelo1) 
+        listaCoches = Coche.objects.filter(modelo= modelo1) 
 
         return render(request, "resultadosBusqueda.html", {"Coches1":listaCoches, "query": modelo1})
 

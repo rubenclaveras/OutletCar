@@ -1,19 +1,27 @@
-<html>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Busqueda de coche</title>
+    <link type='text/css' rel='stylesheet' href='{% static "styles/estilos.css" %}' class="theme">
 </head>
 
 <body>
-    <form action="/buscar/" method="get">
-        <!--<h3>Marca</h3>
+    <div class="formulario">
+        <form action="/buscar/" method="GET">
+            <!--<h3>Marca</h3>
         <input type="text" name="marca">-->
-        <h3>Modelo</h3>
-        <input type="text" name="modelo">
-        <br>
-        <br>
-        <input type="submit" value="Buscar">
-    </form>
+            <h3>Modelo</h3>
+            <input type="text" name="modelo">
+            <br>
+            <br>
+            <input type="submit" value="Buscar">
+        </form>
+    </div>
 </body>
 
 </html>
