@@ -1,21 +1,34 @@
-<html>
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados busqueda</title>
+    <link type='text/css' rel='stylesheet' href='{% static "styles/estilos.css" %}' class="theme">
+</head>
 
 <body>
-    <p>Estas buscando: <strong>{{query}}</strong></p>
+    <div class="formulario">
+
+        <p>Estas buscando: <strong>{{query}}</strong></p>
 
 
-    <p>Coches encontrados: {{Coches1|length}} coches</p>
+        <p>Coches encontrados: {{Coches1|length}} coches</p>
 
-    <ul>
-        {% for coches in Coches1 %}
-        <li>
-            <a href="/anuncios/{{coches.slug}}">
-                {{coches.marca}}{{coches.modelo}}
-            </a> {% endfor %}
-        </li>
-    </ul>
+        <ul>
+            {% for coches in Coches1 %}
+            <li>
+                <p>{{coches.marca}}{{coches.modelo}}</p>
+                <a href="/anuncios/{{coches.slug}}">
+                    <strong>"Anuncio aqui"</strong>
+                </a> {% endfor %}
+            </li>
+        </ul>
 
-
+    </div>
 </body>
 
 </html>
